@@ -1,4 +1,4 @@
-https://github.com/okovtun/BV_521.git
+п»їhttps://github.com/okovtun/BV_521.git
 
 TODO:
-Выучить теорию;
+Р’С‹СѓС‡РёС‚СЊ С‚РµРѕСЂРёСЋ;
