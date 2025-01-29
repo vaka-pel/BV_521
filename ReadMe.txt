@@ -1,8 +1,13 @@
 ﻿https://github.com/okovtun/BV_521.git
 https://www.youtube.com/playlist?list=PLeqyOOqxeiIP4IcNHD37jcaLVmXEbFd1k
 
+IEEE-754:
+http://www.softelectro.ru/ieee754.html
+
 TODO:
-1. Выучить теорию;
+0. Выучить теорию;
+1. Используя оператор sizeof() и макроопределения Visual Studio вывети на экран
+   информацию о следующих типах: short, long, long long, float, double;
 
 DONE:
 2. Создать проект Elochka, и в нем вывести в консоль стишок "В лесу родилась Ёлочка".
