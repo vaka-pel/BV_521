@@ -6,6 +6,8 @@ http://www.softelectro.ru/ieee754.html
 
 TODO:
 0. Выучить теорию;
+
+DONE:
 1. В отдельном проекте решить все задачи из файла:
 	https://github.com/okovtun/BV_521/blob/master/VariablesTask.pdf
 

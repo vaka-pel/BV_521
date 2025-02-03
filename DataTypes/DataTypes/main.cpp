@@ -5,6 +5,12 @@ using std::cout;
 using std::endl;
 
 //#define DATA_TYPES
+//#define INITIALIZATION
+//#define COFFEE
+#define TASK_1
+#define TASK_2
+#define TASK_3
+#define TASK_4
 
 #if defined DATA_TYPES
 	//Если выше определено DATA_TYPES,
@@ -12,11 +18,11 @@ using std::endl;
 	//будет виден комипилятору.
 #endif
 
-//#define INITIALIZATION
+#define PI	3.14
 
 void main()
 {
-	setlocale(LC_ALL, "Russian");
+	setlocale(LC_ALL, "RUSSIAN");
 
 #if defined DATA_TYPES
 	cout << "Hello DataTypes" << endl;
@@ -76,6 +82,7 @@ void main()
 	cout << price << endl;
 #endif // INITIALIZATION
 
+#if defined COFFEE
 	double price_of_coffee;
 	int number_of_cups;
 	cout << "Введите стоимость чашки кофе: ";	cin >> price_of_coffee;
@@ -85,6 +92,34 @@ void main()
 	cout << "Общая стоимость: " << total_price << endl;
 	//ConsoleIn
 	//		>> - оператор изъятия из потока (Stream Extraction operator)
+#endif
+
+	int speed = 0;
+	const int MAX_SPEED = 250;
+
+	5;		//Числовая кодстанта типа 'int'
+	5.;		//Числовая кодстанта типа 'double' (5.0)
+	5.0;	//Числовая кодстанта типа 'double' (5.0)
+	.5;		//Числовая кодстанта типа 'double' (0.5)
+	0.5;	//Числовая кодстанта типа 'double' (0.5)
+	0.5f;	//Числовая кодстанта типа 'float' (0.5)
+
+	cout << typeid(5UL).name() << endl;
+	cout << typeid(MAX_SPEED).name() << endl;
+
+
+	//typeid(value).name()
+	//value - значение
+
+	cout << '+' << endl;
+	cout << "+" << endl;
+
+	cout << sizeof('+') << endl;
+	cout << sizeof("+") << endl;
+	cout << sizeof("Hello") << endl;
+
+	//Литералами
+	//Литералы - это значения, которые воспринимаются "как есть".
 }
 
 /*
