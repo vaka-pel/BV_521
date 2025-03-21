@@ -5,8 +5,9 @@ IEEE-754:
 http://www.softelectro.ru/ieee754.html
 
 TODO:
-1. Вывести в консоль фигуры из файла Geometry.txt:
-	
+1. В Solution 'Control Structures' добавить проект 'Geometry', и в этом проекте 
+   вывести в консоль фигуры из файла Geometry.txt:
+	https://github.com/okovtun/BV_521/blob/master/ControlStructures/Geometry.txt
 
 TODO:
 1. Почитать про длинную арифметику;
