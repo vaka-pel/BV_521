@@ -5,6 +5,10 @@ IEEE-754:
 http://www.softelectro.ru/ieee754.html
 
 TODO:
+1. Вывести в консоль фигуры из файла Geometry.txt:
+	
+
+TODO:
 1. Почитать про длинную арифметику;
 2. Выучить про системы счисления:
 	https://github.com/okovtun/BV_521/blob/master/NumericSystems.pdf
