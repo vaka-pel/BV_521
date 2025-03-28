@@ -1,11 +1,16 @@
 ﻿#pragma warning(disable:4326)
 #include<iostream>
-using namespace std;
+//using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 
 //#define FACTORIAL
 //#define POWER
 //#define ASCII
 //#define FIBONACCI
+//#define SIMPLE_NUMBERS
+#define PERFECT_NUMBERS
 
 void main()
 {
@@ -81,6 +86,7 @@ void main()
 	cout << endl;
 #endif // FIBONACCI
 
+#ifdef SIMPLE_NUMBERS
 	int n;
 	cout << "Введите предельное число: "; cin >> n;
 	for (int i = 1; i < n; i++)
@@ -97,7 +103,24 @@ void main()
 						//и все последующие итерации цикла.
 			}
 		}
-		if(simple)cout << i << "\t";
+		if (simple)cout << i << "\t";
+	}
+	cout << endl;
+#endif // SIMPLE_NUMBERS
+
+	int n;
+	cout << "Введите предельное число: "; cin >> n;
+	for (int i = 1; i <= n; i++)
+	{
+		//bool perfect = true;	//Преаоложим что число совершенное,
+		//но это нужно проветрить:
+		int sum = 0;
+		for (int j = 1; j <= i / 2; j++)
+		{
+			if (i%j == 0)sum += j;
+		}
+		//if (sum == i)perfect = true;
+		if (sum == i)cout << i << "\t";
 	}
 	cout << endl;
 }
