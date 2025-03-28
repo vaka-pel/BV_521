@@ -8,6 +8,9 @@ TODO:
 1. В Solution 'Control Structures' добавить проект 'Geometry', и в этом проекте 
    вывести в консоль фигуры из файла Geometry.txt:
 	https://github.com/okovtun/BV_521/blob/master/ControlStructures/Geometry.txt
+	---------------------------------------------------------
+2. https://github.com/okovtun/BV_521/blob/master/ControlStructures/Picture/ChessBoard.jpg;
+3. https://github.com/okovtun/BV_521/blob/master/ControlStructures/Picture/HardChess.jpg
 
 TODO:
 1. Почитать про длинную арифметику;
