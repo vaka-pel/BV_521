@@ -1,114 +1,96 @@
-#include <iostream>
+﻿#include <iostream>
+#include <windows.h>
+
+#pragma execution_character_set( "utf-8" )
+
 using namespace std;
-using std::cout;
-using std::cin;
 
-#define TASK_1
-#define TASK_2
-#define TASK_3
-#define TASK_4
-#define TASK_5
-#define TASK_6
-#define TASK_7
-
-void main()
+int main()
 {
-	setlocale(LC_ALL, "Russian");
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			if (i == j) cout << "\\";
+			else cout << " ";
+
+		}
+		cout << endl;
+
+		for (int i = 5; i > 0; i--)
+		{
+			for (int j = 0; j < 5; j++)
+				if (i == j)cout << "* ";
+		}
+
+
+
+
+	}
+	//SetConsoleOutputCP(CP_UTF8);
+	//setlocale(LC_ALL, "");
+	SetConsoleOutputCP(65001);
+	//srand(time(NULL));
+
 	int n;
-	cout << "������� �����: "; cin >> n;
-#ifdef TASK_1
-	cout << endl << "TASK_1" << endl;
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-			cout << (j == n - 1 ? "*" : "* ");
-		cout << endl;
-	}
-#endif // TASK_1
-#ifdef TASK_2
-	cout << endl << "TASK_2" << endl;
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j <= i; j++)
-		{
+	cout << "Введите размер шахматной доски: "; cin >> n;
 
-			cout << (j == i ? "*" : "* ");
-		}
-		cout << endl;
-	}
-#endif // TASK_2
-#ifdef TASK_3
-	cout << endl << "TASK_3" << endl;
-	for (int i = n; i > 0; i--)
-	{
-		for (int j = i; j > 0; j--)
-			cout << (j == 1 ? "*" : "* ");
-		cout << endl;
-	}
-#endif // TASK_3
-#ifdef TASK_4
-	cout << endl << "TASK_4" << endl;
+	//Делаем шахматную доску с полями:
+	cout << "Шахматная доска с полями: " << endl;
+	cout << "┌";
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < n; j++)
-			if (j == i || j >= i)
-				cout << (j == n - 1 ? "*" : "* ");
-			else cout << "  ";
-		cout << endl;
+		cout << "──";
 	}
-#endif // TASK_4
-#ifdef TASK_5
-	cout << endl << "TASK_5" << endl;
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-			if (j >= n - i - 1) cout << (j == n - 1 ? "*" : "* ");
-			else cout << "  ";
-		cout << endl;
-	}
-#endif // TASK_5
-#ifdef TASK_6
-	cout << endl << "TASK_6" << endl;
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < 2 * n; j++)
-		{
-			if (j == n - i - 1) cout << "/";
-			else if (j == n + i) { cout << "\\"; break; }
-			else cout << " ";
-		}
-		cout << endl;
-	}
-	for (int i = n; i > 0; i--)
-	{
-		for (int j = 0; j < 2 * n; j++)
-		{
-			if (j == n - i) cout << "\\";
-			else if (j == i + n - 1) { cout << "/"; break; }
-			else cout << " ";
-		}
-		cout << endl;
-	}
-#endif // TASK_6
-#ifdef TASK_7
-	cout << endl << "TASK_7" << endl;
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			if (i % 2 == 0)
-			{
-				if (j % 2 == 0) cout << "+ ";
-				else cout << "- ";
-			}
-			else
-			{
-				if (j % 2 == 0) cout << "- ";
-				else cout << "+ ";
-			}
-		}
-		cout << endl;
-	}
-#endif // TASK_7
+	cout << "┐";
+	cout << endl;
 
+	for (int i = 0; i < n; i++)
+	{
+		cout << "│";
+		for (int j = 0; j < n; j++)
+		{
+			if ((i + j) % 2 == 0) cout << "██";
+			else cout << "  ";
+		}
+		cout << "│";
+		cout << endl;
+	}
+
+	cout << "└";
+	for (int i = 0; i < n; i++)
+	{
+		cout << "──";
+	}
+	cout << "┘";
+	cout << endl;
+
+	//Делаем большую шахматную доску:
+	//Здесь я взял идею из предыдушего упражнения, и просто подставил вложенный 
+	//цикл в if else, т.е. вместо "██" у меня получился "двумерный массив" точек заданного значения n
+
+	cout << "Большая шахматная доска: " << endl;
+
+	for (int i = 0; i < n; i++)  //цикл для отрисовки больших клеток (строк и столбцов)
+	{
+		for (int l = 0; l < n; l++)  //цикл для отрисовки строк внутри одной клетки
+		{
+			for (int j = 0; j < n; j++)  //цикл для отрисовки столбцов клеток
+			{
+				if ((i + j) % 2 == 0)
+				{
+					for (int k = 0; k < n; k++) cout << "* ";
+				}
+				else
+				{
+					for (int k = 0; k < n; k++) cout << "  ";
+				}
+			}
+			cout << endl;
+		}
+	}
+
+
+	return 0;
 }
+

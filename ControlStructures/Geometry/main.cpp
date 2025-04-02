@@ -8,8 +8,10 @@ using std::endl;
 //#define TRIANGLE_2
 //#define TRIANGLE_3
 #define TRIANGLE_4
-#define RHOMBUS
-#define CHESS
+//#define RHOMBUS_1
+//#define RHOMBUS_2
+#define RHOMBUS_3
+//#define CHESS
 
 void main()
 {
@@ -59,6 +61,52 @@ void main()
 	}
 #endif // TRIANGLE_3
 
+#ifdef RHOMBUS_1
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i; j < n; j++)cout << " "; cout << "/";
+		for (int j = 0; j < i; j++)cout << "  "; cout << "\\";
+		cout << endl;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0 - 1; j < i; j++)cout << " "; cout << "\\";
+		for (int j = i + 1; j < n; j++)cout << "  "; cout << "/";
+		cout << endl;
+	}
+
+#endif // RHOMBUS
+
+#ifdef RHOMBUS_2
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i; j < n; j++)cout << " "; cout << "/";
+		for (int j = 0; j < i * 2; j++)cout << " "; cout << "\\";
+		cout << endl;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0 - 1; j < i; j++)cout << " "; cout << "\\";
+		for (int j = 0; j < (n - i - 1) * 2; j++)cout << " "; cout << "/";
+		cout << endl;
+	}
+#endif // RHOMBUS_2
+
+#ifdef RHOMBUS_3
+	for (int i = 0; i < n * 2; i++)
+	{
+		for (int j = 0; j < n * 2; j++)
+		{
+			if (i + n == j || j + n == i)cout << "\\";
+			else if (i == n - 1 - j || i-n == n * 2 - j - 1)cout << "/";
+			else cout << " ";
+		}
+		cout << endl;
+	}
+#endif // RHOMBUS_3
+
+
+#ifdef CHESS
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
@@ -69,5 +117,6 @@ void main()
 		}
 		cout << endl;
 	}
+#endif // CHESS
 
 }
