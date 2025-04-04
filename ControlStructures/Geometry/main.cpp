@@ -10,8 +10,8 @@ using std::endl;
 #define TRIANGLE_4
 //#define RHOMBUS_1
 //#define RHOMBUS_2
-#define RHOMBUS_3
-//#define CHESS
+//#define RHOMBUS_3
+#define CHESS
 
 void main()
 {
@@ -98,7 +98,7 @@ void main()
 		for (int j = 0; j < n * 2; j++)
 		{
 			if (i + n == j || j + n == i)cout << "\\";
-			else if (i == n - 1 - j || i-n == n * 2 - j - 1)cout << "/";
+			else if (i == n - 1 - j || i - n == n * 2 - j - 1)cout << "/";
 			else cout << " ";
 		}
 		cout << endl;
@@ -113,10 +113,13 @@ void main()
 		{
 			//cout << "* ";
 			//if ((i + j) % 2 == 0)cout << "+ "; else cout << "- ";
-			if (i % 2 == j % 2)cout << "+ "; else cout << "- ";
+			//if (i % 2 == j % 2)cout << "+ "; else cout << "- ";
+			//i % 2 == j % 2 ? cout << "+ " : cout << "- ";
+			cout << (i % 2 == j % 2 ? "+ " : "- ");
 		}
 		cout << endl;
 	}
+	true;
 #endif // CHESS
 
 }

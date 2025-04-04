@@ -5,12 +5,18 @@ IEEE-754:
 http://www.softelectro.ru/ieee754.html
 
 TODO:
+1. Напомнить про побитовые сдвиги;
+2. Поменять местами две переменные без использования третьей при помощи побитовых операторов (RAID-5);
+3. Оптимизировать большую Шахматную доску при помощи побитовых операторов;
+4. Пользователь вводит число, в программа выводит на экран треуголник Паскаля заданной глубины;
+
+DONE:
 1. В Solution 'Control Structures' добавить проект 'Geometry', и в этом проекте 
    вывести в консоль фигуры из файла Geometry.txt:
 	https://github.com/okovtun/BV_521/blob/master/ControlStructures/Geometry.txt
 	---------------------------------------------------------
-2. https://github.com/okovtun/BV_521/blob/master/ControlStructures/Picture/ChessBoard.jpg;
-3. https://github.com/okovtun/BV_521/blob/master/ControlStructures/Picture/HardChess.jpg
+2. https://github.com/okovtun/BV_521/blob/master/ControlStructures/Picture/ChessBoard.jpg;	DONE
+3. https://github.com/okovtun/BV_521/blob/master/ControlStructures/Picture/HardChess.jpg;
 
 TODO:
 1. Почитать про длинную арифметику;
