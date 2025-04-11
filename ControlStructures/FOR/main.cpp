@@ -67,10 +67,11 @@ void main()
 	for (int i = 0; i < 256; i++)
 	{
 		//if (i % 16 == 0)cout << endl;
-		if (i & 15 == 0)cout << endl;
-		cout << (char)i << " ";
+		if ((i & 15) ^ 15)cout << endl;
+		//cout << (char)i << " ";
 		//(type)value;	//C-like notation (C-подобная форма записи)
 		//type(value);	//Functional notation (функциональная форма записи)
+		cout << std::hex << (i & 15) << " ";
 	}
 #endif // ASCII
 

@@ -1,96 +1,86 @@
 ﻿#include <iostream>
-#include <windows.h>
-
-#pragma execution_character_set( "utf-8" )
-
+using std::cin;
+using std::cout;
 using namespace std;
 
-int main()
-{
-	for (int i = 0; i < 5; i++)
-	{
-		for (int j = 0; j < 5; j++)
-		{
-			if (i == j) cout << "\\";
-			else cout << " ";
 
-		}
-		cout << endl;
+#define SIZE 100
+#define ABSWAP
+#define CHESSBOARD
+#define PASCAL_TRIANGLE
 
-		for (int i = 5; i > 0; i--)
-		{
-			for (int j = 0; j < 5; j++)
-				if (i == j)cout << "* ";
-		}
+void main() {
+
+#ifdef ABSWAP
+	cout << "Swap values using bitwise operators" << endl;
+	int a = 7, b = 9;
+	cout << "Initial values:" << endl;
+	cout << "a = " << a << endl << "b = " << b << endl;
+	a = a ^ b;
+	b = a ^ b;
+	a = a ^ b;
+	cout << "Swapped values:" << endl;
+	cout << "a = " << a << endl << "b = " << b << endl;
+#endif // ABSWAP
 
 
-
-
-	}
-	//SetConsoleOutputCP(CP_UTF8);
-	//setlocale(LC_ALL, "");
-	SetConsoleOutputCP(65001);
-	//srand(time(NULL));
-
+	setlocale(LC_ALL, "");
 	int n;
-	cout << "Введите размер шахматной доски: "; cin >> n;
-
-	//Делаем шахматную доску с полями:
-	cout << "Шахматная доска с полями: " << endl;
-	cout << "┌";
-	for (int i = 0; i < n; i++)
-	{
-		cout << "──";
-	}
-	cout << "┐";
-	cout << endl;
-
-	for (int i = 0; i < n; i++)
-	{
-		cout << "│";
-		for (int j = 0; j < n; j++)
+	cout << "Введите число: "; cin >> n;
+#ifdef PASCAL_TRIANGLE
+	cout << endl << "PASCAL TRIANGLE" << endl;
+	int arr[SIZE][SIZE];
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j <= i; j++)
 		{
-			if ((i + j) % 2 == 0) cout << "██";
-			else cout << "  ";
+			if (j == 0 || j == i) arr[i][j] = 1;
+			else arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
 		}
-		cout << "│";
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = i; j < n - 1; j++) cout << " ";
+		for (int j = 0; j <= i; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
 		cout << endl;
 	}
+#endif // PASCAL_TRIANGLE
 
-	cout << "└";
+
+#ifdef CHESSBOARD
+	cout << endl << "CHESSBOARD with bitwise operators" << endl;
 	for (int i = 0; i < n; i++)
 	{
-		cout << "──";
-	}
-	cout << "┘";
-	cout << endl;
-
-	//Делаем большую шахматную доску:
-	//Здесь я взял идею из предыдушего упражнения, и просто подставил вложенный 
-	//цикл в if else, т.е. вместо "██" у меня получился "двумерный массив" точек заданного значения n
-
-	cout << "Большая шахматная доска: " << endl;
-
-	for (int i = 0; i < n; i++)  //цикл для отрисовки больших клеток (строк и столбцов)
-	{
-		for (int l = 0; l < n; l++)  //цикл для отрисовки строк внутри одной клетки
+		if (i & 1)
 		{
-			for (int j = 0; j < n; j++)  //цикл для отрисовки столбцов клеток
+			for (int i = 0; i < n; i++)
 			{
-				if ((i + j) % 2 == 0)
+				for (int j = 0; j < n; j++)
 				{
-					for (int k = 0; k < n; k++) cout << "* ";
+					if (j & 1)
+						for (int i = 0; i < n; i++) cout << (i == n - 1 ? "*" : "* ");
+					else for (int i = 0; i < n; i++) cout << (i == n - 1 ? " " : "  ");
 				}
-				else
-				{
-					for (int k = 0; k < n; k++) cout << "  ";
-				}
+				cout << endl;
 			}
-			cout << endl;
+		}
+		else
+		{
+			for (int i = 0; i < n; i++)
+			{
+				for (int j = 0; j < n; j++)
+				{
+					if (j & 1)
+						for (int i = 0; i < n; i++) cout << (i == n - 1 ? " " : "  ");
+					else for (int i = 0; i < n; i++) cout << (i == n - 1 ? "*" : "* ");
+				}
+				cout << endl;
+			}
 		}
 	}
+#endif // CHESSBOARD
 
 
-	return 0;
+
 }
-
