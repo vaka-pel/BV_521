@@ -1,0 +1,16 @@
+﻿type name(parameters)
+{
+	.....;
+	group-of-statements;
+	.....;
+	return value;
+}
+
+type - тип возвращаемого значения.
+void (пустота)
+return;
+
+name - имя функции.
+
+parameters - список принимаемых параметров функции.
+			 
