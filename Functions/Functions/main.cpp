@@ -24,7 +24,7 @@ int Sum(int a, int b, int c)			//Реализация функции (Опред
 	int d = a + b + c;
 	return d;
 }
-int Difference(int a, int b)
+int Difference(int a, int b, int c)
 {
 	return a - b;
 }
@@ -47,5 +47,8 @@ double Quotient(int a, int b)
 	int Sum(int a, int b, int c = 0);
 
 	Redefinition of default parameter.
+-----------------------------------
+Unresolved Externals
+LNK2019: unresolved external symbol found
 -----------------------------------
 */
