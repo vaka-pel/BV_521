@@ -12,6 +12,8 @@ void Print(double arr[], const int n);
 void Sort(int arr[], const int n);
 void Sort(double arr[], const int n);
 
+int Sum(int arr[], const int n);
+
 //60 строк кода
 
 void main()
@@ -24,6 +26,7 @@ void main()
 	Print(arr, n);
 	Sort(arr, n);
 	Print(arr, n);
+	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
 
 	const int SIZE = 8;
 	double brr[SIZE];
@@ -97,4 +100,13 @@ void Sort(double arr[], const int n)
 			}
 		}
 	}
+}
+int Sum(int arr[], const int n)
+{
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
 }
