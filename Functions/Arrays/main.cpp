@@ -3,11 +3,16 @@ using namespace std;
 
 #define tab "\t"
 
+const int ROWS = 3;
+const int COLS = 4;
+
 void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
 void FillRand(double arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
 
 template<typename T>
 void Print(T arr[], const int n);
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
 
 template<typename T>
 void Sort(T arr[], const int n);
@@ -34,7 +39,7 @@ void main()
 	const int n = 10;
 	int arr[n] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-	FillRand(arr, n);
+	//FillRand(arr, n);
 	Print(arr, n);
 	Sort(arr, n);
 	Print(arr, n);
@@ -52,9 +57,17 @@ void main()
 	const int SIZE = 8;
 	double brr[SIZE];
 	FillRand(brr, SIZE);
-	Print(brr, SIZE);
+	//Print(brr, SIZE);
 	Sort(brr, SIZE);
-	Print(brr, SIZE);
+	//Print(brr, SIZE);
+
+	
+	int i_arr_2[ROWS][COLS];
+	FillRand(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
+
+
+
 	cout << "Сумма элементов массива: " << Sum(brr, SIZE) << endl;
 	cout << "Среднее-арифметическое элементов массива: " << Avg(brr, SIZE) << endl;
 	cout << "Минимальное значение элементов массива: " << MinValueIn(brr, SIZE) << endl;
@@ -78,6 +91,17 @@ void FillRand(double arr[], const int n, int minRand, int maxRand)
 		arr[i] /= 100;
 	}
 }
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
+	}
+}
+
 template<typename T>
 void Print(T arr[], const int n)
 {
@@ -88,6 +112,17 @@ void Print(T arr[], const int n)
 	cout << endl;
 }
 
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << tab;
+		}
+		cout << endl;
+	}
+}
 template<typename T>
 void Sort(T arr[], const int n)
 {
