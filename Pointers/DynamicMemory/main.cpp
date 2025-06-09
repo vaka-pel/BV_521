@@ -21,6 +21,9 @@ void main()
 	FillRand(arr, n);
 	Print(arr, n);
 
+	int value;
+	cout << "Введите добавляемое значение: "; cin >> value;
+
 	delete[] arr;
 	//Memory leak - утечка памяти.
 }
